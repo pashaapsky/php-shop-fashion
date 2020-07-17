@@ -1,0 +1,11 @@
+php_value display_errors 1
+php_value display_startup_errors 1
+php_value error_reporting E_ALL
+
+RewriteEngine on
+ # Если запрашиваемый объект не папка
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule (.+) index.php [L,QSA]
